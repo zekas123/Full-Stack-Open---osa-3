@@ -1,0 +1,28 @@
+h2 {
+  color: rgb(46, 44, 37);
+
+  font-style: italic;
+}
+.person {
+  color: grey;
+  padding-top: 3px;
+  font-size: 15px;
+}
+.addPersonMessage {
+  color: rgba(0, 0, 0, 0.425);
+  background: rgb(71, 131, 63);
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.addPersonMessageFailed {
+  color: rgb(252, 0, 0);
+  background: rgb(131, 127, 127);
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
