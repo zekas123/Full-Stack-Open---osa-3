@@ -1,0 +1,2 @@
+create /3.12/backend  .env file and paste here MONGODB_URI=mongodb+srv://NAME:PASSWORD@cluster0.m0li5t8.mongodb.net/phonebookApp?retryWrites=true&w=majority&appName=Cluster0
+and in code change mongo.js "const url" if u wont change data base
