@@ -19,7 +19,7 @@ const App = () => {
   const deletePerson = (id) => {
     const person = persons.find(p => p.id === id)
     if (window.confirm(`Delete ${person.name}?`)) {
-      axios.delete(`/persons/${id}`)
+      axios.delete(`/api/persons/${id}`)
         .then(() => {
           setPersons(prev => prev.filter(p => p.id !== id))
         })
@@ -37,7 +37,7 @@ const App = () => {
     if (isNameInList) {
       const existingPerson = persons.find(p => p.name === newName)
       if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
-        axios.put(`/persons/${existingPerson.id}`, {
+        axios.put(`/api/persons/${existingPerson.id}`, {
           name: newName,
           number: newNumber,
         })
@@ -57,7 +57,7 @@ const App = () => {
       return
     }
     
-    axios.post('/persons', {
+    axios.post('/api/persons', {
       name: newName,
       number: newNumber,
     })
@@ -70,16 +70,19 @@ const App = () => {
     })
     .catch(error => {
       console.error('Error adding person:', error)
-      alert('Failed to add person')
+      setMessage(`Failed to update ${error}`)
     })
   }
 
 
   useEffect(() => {
-    axios.get('/persons')
+    axios.get('/api/persons')
       .then(response => {
         console.log('Fetched persons:', response.data)
         setPersons(response.data)
+      })
+      .catch(error => {
+        console.error('Error fetching persons:', error)
       })
   }, [])
 
