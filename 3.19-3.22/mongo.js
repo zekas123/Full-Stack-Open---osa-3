@@ -7,7 +7,7 @@ if (process.argv.length < 3) {
 
 const password = process.argv[2]
 
-// 
+//
 const url =
   `mongodb+srv://zekas:${password}@cluster0.m0li5t8.mongodb.net/phonebookApp?retryWrites=true&w=majority&appName=Cluster0`
 
@@ -16,7 +16,7 @@ mongoose.set('strictQuery', false)
 mongoose.connect(url, { family: 4 })
 
 const personSchema = new mongoose.Schema({
-  
+
   name: { type: String, minlength: 3 },
   number: { type: String, minlength: 3 },
 })
